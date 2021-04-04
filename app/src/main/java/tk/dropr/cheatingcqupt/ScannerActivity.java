@@ -390,7 +390,7 @@ public class ScannerActivity extends AppCompatActivity {
                                            @NonNull int[] grantResults) {
         if (requestCode == 1) {
             if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                
+
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
