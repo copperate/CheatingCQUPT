@@ -1,50 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="tk.dropr.cheatingcqupt">
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera"
-        android:required="false" />
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.CheatingCQUPT">
-        <activity
-            android:name=".ScannerActivity"
-            android:label="@string/scanner_label"
-            android:parentActivityName=".PrescanActivity"/>
-        <activity
-            android:name=".PrescanActivity"
-            android:label="@string/scanned_result_label"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".AboutUs"
-            android:label="@string/action_about"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.CheatingCQUPT.NoActionBar" />
-        <activity
-            android:name=".UserPortal"
-            android:label="@string/action_userportal"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ScannedResult"
-            android:label="@string/scanned_result_label"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/home_label"
-            android:theme="@style/Theme.CheatingCQUPT.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+          package="tk.dropr.cheatingcqupt">
 
-                <category android:name="android.intent.category.LAUNCHER" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="false"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.CheatingCQUPT">
+        <activity
+                android:name=".WarningActivity"
+                android:label="@string/menu_warning"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".ScannerActivity"
+                android:label="@string/scanner_label"
+                android:parentActivityName=".PrescanActivity"/>
+        <activity
+                android:name=".PrescanActivity"
+                android:label="@string/scanned_result_label"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".AboutUs"
+                android:label="@string/action_about"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/Theme.CheatingCQUPT.NoActionBar"/>
+        <activity
+                android:name=".UserPortal"
+                android:label="@string/action_userportal"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".ScannedResult"
+                android:label="@string/scanned_result_label"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".MainActivity"
+                android:label="@string/home_label"
+                android:theme="@style/Theme.CheatingCQUPT.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
 
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity"/>
         </activity>
     </application>
 

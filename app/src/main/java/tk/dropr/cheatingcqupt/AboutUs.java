@@ -1,5 +1,6 @@
 package tk.dropr.cheatingcqupt;
 
+import android.content.Intent;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -46,7 +47,8 @@ public class AboutUs extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_loginjabbr:
-                if(hasPackage(this,"web.jabbr")==false) {
+                if(hasPackage(this,"tk.dropr.jabbr")==false)
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "未检测到Jabbr。请前往DropR应用商店安装。";
                     int duration = Toast.LENGTH_SHORT;
@@ -60,6 +62,9 @@ public class AboutUs extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
+                    Intent intent=new Intent();
+                    intent.setClassName("tk.dropr.jabbr", "tk.dropr.jabbr.AuthActivity");
+                    startActivity(intent);
                     return true;
                 }
             default:

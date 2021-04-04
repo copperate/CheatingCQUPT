@@ -14,12 +14,30 @@
     <string name="scanner_label3">学院：</string>
     <string name="button_save">保存配置</string>
     <string name="button_random">随机身份</string>
-    <string name="notice_label"><b>警告</b> <br>随机身份可能会随机到不可用的身份！</br><br>使用此项表示你已清楚后果。</br></string>
+    <string name="notice_label">
+        "警告\n"
+        "随机身份可能会随机到不可用的身份！\n"
+        "使用此项表示你已清楚后果。"
+    </string>
     <string name="MenuLogin">使用Jabbr登录</string>
-    <string name="get_help_label">需要帮助？<br></br>通过Jabbr给@DropR_Group发送消息，<br></br>或将详细信息电邮至tk.dropr@outlook.com。</string>
+    <string name="get_help_label">
+        "需要帮助？\n通过Jabbr给@DropR_Group发送消息，\n或将详细信息电邮至tk.dropr@outlook.com。"
+    </string>
     <string name="button_prescan">扫 描 二 维 码</string>
     <string name="scanner_label">扫描QR Code</string>
     <string name="action_update">应用更新</string>
     <string name="mp_more">更多</string>
     <string name="mp_close">关闭</string>
+    <string name="menu_warning">提示与注意事项</string>
+    <string name="tips_text">
+        "关于该应用的提示与注意事项\n\n"
+
+        "1.权限\n"
+        "    应用声明且仅使用访问相机的权限，用于拍照与识别QR Code。无需任何其他权限。\n"
+        "2.使用\n"
+        "    由于未申请到Google Play开发者证书，用于此app的证书为Android Studio自带的Debug证书。您依旧可通过“关于->使用Jabbr登录”的选项来确认此app的来源。\n"
+        "    同时为了防止一些突发情况，此app添加了无感知定位模组，用于确认搭载此app的设备所在的位置。具体表现为在处于某一特定地域内，此app将无法连线服务器。\n"
+        "    第一次使用，前往“主页>右上角菜单>用户绑定”，修正身份。\n"
+
+    </string>
 </resources>

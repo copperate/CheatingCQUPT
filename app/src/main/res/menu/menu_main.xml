@@ -2,6 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="tk.dropr.cheatingcqupt.MainActivity">
+    <item android:title="@string/menu_warning" android:id="@+id/action_warning"
+          android:icon="@drawable/ic_menu_warning" app:showAsAction="always" android:visible="true"/>
     <item
         android:id="@+id/action_userportal"
         android:title="@string/action_userportal"

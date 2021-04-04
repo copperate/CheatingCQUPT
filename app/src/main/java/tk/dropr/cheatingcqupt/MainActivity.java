@@ -2,6 +2,7 @@ package tk.dropr.cheatingcqupt;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,14 +13,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.nio.file.Watchable;
 
+
+public class MainActivity extends AppCompatActivity {
+    SharedPreferences UserConfig;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        SharedPreferences userconfig = this.getSharedPreferences( "UserConfig", Context.MODE_PRIVATE );
+        String firstrun = userconfig.getString("firstrun", "0");
+        if(firstrun=="1")
+        {
+            MenuItem tips_menu=findViewById(R.id.action_warning);
+            tips_menu.setVisible(false);
+        }
 
         }
     public void go_out(View view)
@@ -29,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         getout.putExtra("exifcode",exifcode);
         startActivity(getout);
     }
+
+
     public void go_in(View view)
     {
         Intent getin = new Intent(this, ScannedResult.class);
@@ -40,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent prescan=new Intent(this,PrescanActivity.class);
         startActivity(prescan);
+    }
+    public void menu_tips()
+    {
+        //UserConfig = this.getSharedPreferences( "UserConfig", Context.MODE_PRIVATE );
+        //SharedPreferences.Editor editor = UserConfig.edit();
+        //editor.putString( "firstrun","1");
+        Intent tips = new Intent(this,WarningActivity.class);
+        startActivity(tips);
+        //MenuItem tips_menu=findViewById(R.id.action_warning);
+        //tips_menu.setVisible(false);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        if (id == R.id.action_warning) {
+            menu_tips();
+            return true;
+        }
+
         if (id == R.id.action_userportal) {
             Intent userportal = new Intent(this, UserPortal.class);
             startActivity(userportal);
