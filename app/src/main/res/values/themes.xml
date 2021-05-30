@@ -19,6 +19,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.CheatingCQUPT.MiniAppActionBar" parent="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
+    </style>
+
+    <style name="MenuTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+
     <style name="Theme.CheatingCQUPT.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.CheatingCQUPT.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

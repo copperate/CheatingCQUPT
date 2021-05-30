@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CheatingCQUPT</string>
-    <string name="action_userportal">用户绑定</string>
+    <string name="action_userportal">申报入口</string>
     <string name="home_label">出入校管理</string>
     <string name="scanned_result_label">出入校管理——扫码</string>
     <string name="action_about">关于我们</string>
@@ -9,16 +9,15 @@
     <string name="button_scan">模拟扫码</string>
     <string name="allow_out_text">允许出校</string>
     <string name="allow_in_text">欢迎返校</string>
-    <string name="scanner_label1">学号：</string>
-    <string name="scanner_label2">姓名：</string>
-    <string name="scanner_label3">学院：</string>
+    <string name="scanner_label1">学号:</string>
+    <string name="scanner_label2">姓名:</string>
+    <string name="scanner_label3">学院:</string>
+    <string name="scanner_result_01">欢迎</string>
+    <string name="scanner_result_02">您是今天第</string>
+    <string name="scanner_result_03">个</string>
+    <string name="home_text_label_01">申请记录</string>
     <string name="button_save">保存配置</string>
     <string name="button_random">随机身份</string>
-    <string name="notice_label">
-        "警告\n"
-        "随机身份可能会随机到不可用的身份！\n"
-        "使用此项表示你已清楚后果。"
-    </string>
     <string name="MenuLogin">使用Jabbr登录</string>
     <string name="get_help_label">
         "需要帮助？\n通过Jabbr给@DropR_Group发送消息，\n或将详细信息电邮至tk.dropr@outlook.com。"
@@ -33,11 +32,37 @@
         "关于该应用的提示与注意事项\n\n"
 
         "1.权限\n"
-        "    应用声明且仅使用访问相机的权限，用于拍照与识别QR Code。无需任何其他权限。\n"
+        " 应用声明且仅使用访问相机的权限，用于拍照与识别QR Code。无需任何其他权限。\n"
         "2.使用\n"
-        "    由于未申请到Google Play开发者证书，用于此app的证书为Android Studio自带的Debug证书。您依旧可通过“关于->使用Jabbr登录”的选项来确认此app的来源。\n"
-        "    同时为了防止一些突发情况，此app添加了无感知定位模组，用于确认搭载此app的设备所在的位置。具体表现为在处于某一特定地域内，此app将无法连线服务器。\n"
-        "    第一次使用，前往“主页>右上角菜单>用户绑定”，修正身份。\n"
+        " 由于未申请到Google Play开发者证书，用于此app的证书为Android Studio自带的Debug证书。您依旧可通过“关于->使用Jabbr登录”的选项来确认此app的来源。\n"
+        " 同时为了防止一些突发情况，此app添加了无感知定位模组，用于确认搭载此app的设备所在的位置。具体表现为在处于某一特定地域内，此app将无法连线服务器。\n"
+        " 第一次使用，前往“主页>申报入口”，修正身份。\n"
 
     </string>
+    <string name="confirm_label1">申请流程</string>
+    <string name="confirm_label2">申请</string>
+    <string name="confirm_label3">申请人</string>
+    <string name="confirm_label4">申请时间</string>
+    <string name="confirm_label5">扫码离校</string>
+    <string name="confirm_label6">离校扫码</string>
+    <string name="confirm_label7">扫码地点</string>
+    <string name="confirm_label8">出校时间</string>
+    <string name="confirm_label9">返校销假</string>
+    <string name="confirm_label10">返校扫码</string>
+    <string name="confirm_label11">扫码地点</string>
+    <string name="confirm_label12">返校时间</string>
+    <string name="confirm_label13">申请详情</string>
+    <string name="confirm_label14">学号</string>
+    <string name="confirm_label15">姓名</string>
+    <string name="confirm_label16">请假类型</string>
+    <string name="confirm_label17">出发时间</string>
+    <string name="confirm_label18">预计返校时间</string>
+    <string name="confirm_label19">外出地点</string>
+    <string name="confirm_label20">外出事由</string>
+    <string name="home_label1">外出时间</string>
+    <string name="home_label2">外出地点</string>
+    <string name="home_label3">预计回校时间</string>
+    <string name="home_label4">更新时间</string>
+    <string name="home_label5">详情</string>
+    <string name="userportal_saveandjump">保存并直接转到详情页面</string>
 </resources>

@@ -16,6 +16,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.CheatingCQUPT">
         <activity
+                android:name=".ConfirmActivity"
+                android:label="@string/home_label"
+                android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
                 android:name=".WarningActivity"
                 android:label="@string/menu_warning"
                 android:parentActivityName=".MainActivity"/>
@@ -39,7 +44,8 @@
         <activity
                 android:name=".ScannedResult"
                 android:label="@string/scanned_result_label"
-                android:parentActivityName=".MainActivity"/>
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/Theme.CheatingCQUPT.NoActionBar"/>
         <activity
                 android:name=".MainActivity"
                 android:label="@string/home_label"

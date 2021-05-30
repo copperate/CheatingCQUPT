@@ -1,6 +1,8 @@
 package tk.dropr.cheatingcqupt;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -29,43 +31,26 @@ public class AboutUs extends AppCompatActivity {
         return true;
     }
 
-    public boolean hasPackage(Context context, String pkgName) {
-        if (null == context || null == pkgName) {
-            return false;
-        }
 
-        boolean bHas = true;
-        try {
-            context.getPackageManager().getPackageInfo(pkgName, PackageManager.GET_GIDS);
-        } catch (PackageManager.NameNotFoundException e) {
-            // 抛出找不到的异常，说明该程序已经被卸载
-            bHas = false;
-        }
-        return bHas;
-    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_loginjabbr:
-                if(hasPackage(this,"tk.dropr.jabbr")==false)
-                {
-                    Context context = getApplicationContext();
-                    CharSequence text = "未检测到Jabbr。请前往DropR应用商店安装。";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                    return true;
-                }
-                else{
+                Uri loginjabbr=Uri.parse("jabbr://login/100102");
+                Intent jabbrIntent = new Intent(Intent.ACTION_VIEW, loginjabbr);
+                try {
+                    startActivity(jabbrIntent);
                     Context context = getApplicationContext();
                     CharSequence text = "正在启动Jabbr，请在弹出的窗口中选择“授权”。";
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    Intent intent=new Intent();
-                    intent.setClassName("tk.dropr.jabbr", "tk.dropr.jabbr.AuthActivity");
-                    startActivity(intent);
-                    return true;
+                } catch (ActivityNotFoundException e) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "未安装Jabbr。请前往DropR应用商店安装。";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
                 }
             default:
                 return super.onOptionsItemSelected(item);

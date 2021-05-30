@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -14,55 +15,73 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.nio.file.Watchable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
-    SharedPreferences UserConfig;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        String ymd;
+        Calendar calendar = Calendar.getInstance();
+        int month1=calendar.get(Calendar.MONTH)+1;
+        String date1=String.format("%02d", calendar.get(Calendar.YEAR));
+        String date2=String.format("%02d", month1);
+        String date3=String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH));
+        ymd= date1+"-"+date2+"-"+date3;
+        String hms;
+        int time1=calendar.get(Calendar.HOUR_OF_DAY);
+        int time2=calendar.get(Calendar.MINUTE);
+        int time3=calendar.get(Calendar.SECOND);
+        hms=String.format("%02d", time1)+":"+String.format("%02d", time2)+":"+String.format("%02d", time3);
         SharedPreferences userconfig = this.getSharedPreferences( "UserConfig", Context.MODE_PRIVATE );
-        String firstrun = userconfig.getString("firstrun", "0");
-        if(firstrun=="1")
-        {
-            MenuItem tips_menu=findViewById(R.id.action_warning);
-            tips_menu.setVisible(false);
-        }
+        String name=userconfig.getString("name","李华");
+        String reason=userconfig.getString("reason","校外");
+        TextView textView18=findViewById(R.id.textView18);
+        TextView textView22=findViewById(R.id.textView22);
+        TextView textView25=findViewById(R.id.textView25);
+        TextView textView27=findViewById(R.id.textView27);
+        TextView textView29=findViewById(R.id.textView29);
+        TextView textView30=findViewById(R.id.textView30);
+        TextView textView33=findViewById(R.id.textView33);
+        TextView textView35=findViewById(R.id.textView35);
+        TextView textView37=findViewById(R.id.textView37);
+        TextView textView39=findViewById(R.id.textView39);
+        textView22.setText(ymd);
+        textView27.setText(ymd);
+        textView33.setText(ymd);
+        textView37.setText(ymd);
+        textView29.setText(ymd+" "+hms);
+        textView39.setText(ymd+" "+hms);
+        textView25.setText(reason);
+        textView35.setText(reason);
+        textView18.setText(name);
+        textView30.setText(name);
+    }
 
-        }
-    public void go_out(View view)
+    public void go_out_still(View view)
     {
-        Intent getout = new Intent(this, ScannedResult.class);
+        Intent gooutbanner=new Intent(this,ConfirmActivity.class);
         int exifcode=1;
-        getout.putExtra("exifcode",exifcode);
-        startActivity(getout);
+        gooutbanner.putExtra("exifcode",exifcode);
+        startActivity(gooutbanner);
     }
-
-
-    public void go_in(View view)
+    public void go_in_still(View view)
     {
-        Intent getin = new Intent(this, ScannedResult.class);
+        Intent goinbanner=new Intent(this,ConfirmActivity.class);
         int exifcode=2;
-        getin.putExtra("exifcode",exifcode);
-        startActivity(getin);
+        goinbanner.putExtra("exifcode",exifcode);
+        startActivity(goinbanner);
     }
-    public void pre_scan(View view)
+    public void userportal(View view)
     {
-        Intent prescan=new Intent(this,PrescanActivity.class);
-        startActivity(prescan);
-    }
-    public void menu_tips()
-    {
-        //UserConfig = this.getSharedPreferences( "UserConfig", Context.MODE_PRIVATE );
-        //SharedPreferences.Editor editor = UserConfig.edit();
-        //editor.putString( "firstrun","1");
-        Intent tips = new Intent(this,WarningActivity.class);
-        startActivity(tips);
-        //MenuItem tips_menu=findViewById(R.id.action_warning);
-        //tips_menu.setVisible(false);
+        Intent userportal = new Intent(this, UserPortal.class);
+        startActivity(userportal);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,13 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_warning) {
-            menu_tips();
-            return true;
-        }
+            Intent tips = new Intent(this,WarningActivity.class);
+            startActivity(tips);
 
-        if (id == R.id.action_userportal) {
-            Intent userportal = new Intent(this, UserPortal.class);
-            startActivity(userportal);
             return true;
         }
         if(id==R.id.action_update){

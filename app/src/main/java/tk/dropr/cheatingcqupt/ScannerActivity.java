@@ -443,6 +443,7 @@ public class ScannerActivity extends AppCompatActivity {
         int exifcode=1;
         getout.putExtra("exifcode",exifcode);
         startActivity(getout);
+        finish();
     }
     public void go_in_scan(View view)
     {
@@ -450,6 +451,7 @@ public class ScannerActivity extends AppCompatActivity {
         int exifcode=2;
         getin.putExtra("exifcode",exifcode);
         startActivity(getin);
+        finish();
     }
 
 

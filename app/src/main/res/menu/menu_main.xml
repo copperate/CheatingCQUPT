@@ -5,10 +5,6 @@
     <item android:title="@string/menu_warning" android:id="@+id/action_warning"
           android:icon="@drawable/ic_menu_warning" app:showAsAction="always" android:visible="true"/>
     <item
-        android:id="@+id/action_userportal"
-        android:title="@string/action_userportal"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/action_update"
         android:title="@string/action_update" />
     <item
